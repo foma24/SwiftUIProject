@@ -1,17 +1,23 @@
-//
-//  SwiftUIProjectApp.swift
-//  SwiftUIProject
-//
-//  Created by Denis Fomichev on 1/20/23.
-//
-
 import SwiftUI
 
 @main
-struct SwiftUIProjectApp: App {
+struct SwiftUIDemoApp: App {
     var body: some Scene {
         WindowGroup {
-            ContentView()
+            TabView {
+                ContentView()
+                    .tabItem {
+                        Label("Homepage", systemImage: "house.fill")
+                    }
+                ProfileView()
+                    .tabItem {
+                        Label("Profile", systemImage: "person.fill")
+                    }
+                CharactersListView()
+                    .tabItem {
+                        Label("Characters", systemImage: "list.star")
+                    }
+            }
         }
     }
 }
